@@ -671,12 +671,13 @@ $(document).ready(function() {
 			}
 		}
 	});
+/*TODO : changer les stats du fantome*/
 	$(".chest").click(function() {
 		if(passgate&&!unlockchest) {
 			closemessage();
 			powerhp();
-			battle=makebattle(Math.round(Math.random()*100),"Ghost",400,400,"Invisible hands",27,"This ghost is gurading the chest",4,power,hp,hp,currentsword,false,"vs-ghost");
-			html="<div class=\"alert alert-battle-ghost\"><b>Ghost</b><br>The chest is guarded by a ghost<br><br>"+battle.html+"</div>";
+			battle=makebattle(Math.round(Math.random()*100),"Ghost",400,400,"Mains invisibles",27,"Ce fantôme garde un coffre",4,power,hp,hp,currentsword,false,"vs-ghost");
+			html="<div class=\"alert alert-battle-ghost\"><b>Fantôme</b><br>Le coffre est gardé par le fantôme<br><br>"+battle.html+"</div>";
 			$("#otheralerts").append(html);
 			battle.init();
 			closemessage();
@@ -686,29 +687,29 @@ $(document).ready(function() {
 			openchestcount++;
 			closemessage();
 			if(openchestcount==1) {
-				message="The chest is empty now";
+				message="Coffre vide";
 			}
 			else if(openchestcount==2) {
-				message="The chest is empty now, told ya before";
+				message="Le coffre est vide !";
 			}
 			else if(openchestcount==3) {
-				message="THE CHEST IS EMPTY!!!!!";
+				message="Le coffre est vide j'ai dis";
 			}
 			else if(openchestcount==4) {
-				message="PLS BELIEVE ME!!!";
+				message="C'est bon crois moi il est vide";
 			}
 			else if(openchestcount==5) {
-				message="I've told you";
+				message="Tu vois il est vide";
 			}
 			else if(openchestcount==6) {
-				message="Now I hate you";
+				message="C'est vide arrête de cliquer";
 			}
 			else if(openchestcount==7) {
-				message="Oh, no, sorry, the chest is not empty, there are 1000 gold bars hidden inside the chest :D";
+				message="En fait j'ai menti il est pas vide, tiens 1000 lingots :D";
 				goldbar+=1000;
 			}
 			else if(openchestcount>=8) {
-				message="The chest is empty now (really)";
+				message="La tête de ma mère il est vide";
 			}
 			$(".alert-chest-empty").remove();
 			makealert("chest-empty","Empty",message,true)
@@ -789,12 +790,12 @@ man="\n\
 		}
 		else {
 			if(digstep<5) {
-				makealert("small-hole","A small hole","It seems that you can dig here<br><br><input type=\"button\" value=\"Dig the hole!\" onclick=\"dig(true,false)\"> (Make sure you have a shovel!)",true);
+				makealert("small-hole","Un petit trou, tu peux creuser<br><br><input type=\"button\" value=\"Creuse le trou !\" onclick=\"dig(true,false)\"> (Il faut avoir une pelle)",true);
 			}
 		}
 	});
 	$(".nametag").click(function() {
-		makealert("name-tag","Name tag","You found a name tag!<br>You can change your name and description in battles<br><br>Name: <input type='text' id='yourname' value='"+theusername+"'><br>Description: <input type='text' id='yourdesc' value='"+theuserdesc+"'><br><br>Warning: Putting very long name / description or putting some wild characters may mess up the game",true);
+		makealert("name-tag","Changement de nom et de description","Tu as trouvé de quoi changer ton nom et ta description !<br><br>Nom: <input type='text' id='yourname' value='"+theusername+"'><br>Description: <input type='text' id='yourdesc' value='"+theuserdesc+"'><br><br>Attention : une description trop longue ne s'affichera pas en entier !",true);
 		namedesc=setInterval(function() {
 			theusername=$("#yourname").val();
 			theuserdesc=$("#yourdesc").val();
@@ -812,7 +813,7 @@ chestascii='\n\
       % \\ | %  ))   |\n\
       %  \\|%________|\n\
        %%%%';
-			makealert("chest-underground","Chest","You found a chest, the chest contains some resources and items!<br><br><pre>"+chestascii+"</pre>",true);
+			makealert("chest-underground","Trésor","Tu as trouvé un trésor, il contient pas mal de choses !<br><br><pre>"+chestascii+"</pre>",true);
 			goldbar+=5000;
 			ironbar+=5000;
 			items[7].owned+=5;
@@ -820,12 +821,12 @@ chestascii='\n\
 			checkthings();
 		}
 		else {
-			makealert("chest-underground","Chest","The chest is empty, 100% sure",true);
+			makealert("chest-underground","Coffre vide","Le coffre est vide !!",true);
 		}
 	});
 	$(".pizzas").click(function() {
 		if(!pizzaeaten) {
-			makealert("pizza-alert","Pizzas?","You found some pizzas, you don't know they are rotten or not<br>Do you want to eat them?<br><br><input type='button' value='Eat the pizzas' onclick='eatpizza()'>",true);
+			makealert("pizza-alert","Pizzas ?","Tu as trouvé des pizzas, les manger ?<br><br><input type='button' value='Manger les pizzas' onclick='eatpizza()'>",true);
 		}
 		else if(pizzaeaten) {
 			if(!poisoned) {
@@ -836,7 +837,7 @@ chestascii='\n\
 			}
 		}
 	});
-	$(".laptop").click(function() {
+	*/$(".laptop").click(function() {
 		makealert("cookieclicker","Cookie Clicker (not full version)","Play the full game here: <a href='http://orteil.dashnet.org/cookieclicker/' target='_blank'>http://orteil.dashnet.org/cookieclicker/</a><br><br><span style='font-size:20px;'><span class='current-cookie'>"+items[19].owned+"</span> cookie(s)</span><br><span class='cps'>"+cursor/10+" </span> per second<br><br><input type=\"button\" value=\"Bake a cookie\" onclick=\"cookieclicker('bake')\"><br><br><span style='font-size:20px;'>Shop:</span><br><br><input type=\"button\" value=\"Cursor ["+cursor+"]\" onclick=\"alert('This is not the full version of Cookie Clicker, therefore you cant buy cursors')\" class='cursor-button'> (<span class='cursor-price'>"+Math.round(15*Math.pow(1.15,cursor))+"</span> cookies)<br><!--input type=\"button\" value=\"Grandma [0]\" onclick=\"alert('This is not the full version of Cookie Clicker')\"> (100 cookies)00-->",true);
 		
 		/* 
@@ -848,9 +849,9 @@ chestascii='\n\
 			
 		*/
 		
-	});
+	});*/
 	$(".sign-dig").click(function() {
-		makealert("sign-underground-alert","A sign","\"Nothing more to dig, this is the end. But maybe there will be updates in the future\"",true);
+		makealert("sign-underground-alert","Plus de trou","\"Il n'y a plus rien à creuser\"",true);
 	});
 	$(".theportal").click(function() {
 		exitmagicportal();
@@ -951,7 +952,7 @@ function checkthings() {
 }
 function makealert(id,title,text,show) {
 	$(".alert-"+id).remove();
-	html="<div class=\"alert alert-"+id+"\"><b>"+title+"</b><br>"+text+"<div class=\"close-message-button-"+id+"\"><br><br><input type=\"button\" value=\"Close this window\" onclick=\"closemessage()\" class='button-close-window-"+id+"'></div></div>";
+	html="<div class=\"alert alert-"+id+"\"><b>"+title+"</b><br>"+text+"<div class=\"close-message-button-"+id+"\"><br><br><input type=\"button\" value=\"Fermer la fenêtre\" onclick=\"closemessage()\" class='button-close-window-"+id+"'></div></div>";
 	$("#otheralerts").append(html);
 	if(show) {
 		closemessage();
@@ -989,7 +990,7 @@ function clickcloud() {
 	clickcloudcount++;
 	if(clickcloudcount==10) {
 		goldbar+=100;
-		makealert("falling-gold","Gold!","100 gold bars are falling from the sky!",true);
+		makealert("falling-gold","OR !","100 lingots tombent du ciel !",true);
 		checkthings();
 	}
 }
@@ -1023,7 +1024,7 @@ function testskill() {
 }
 function showcredits() {
 	closemessage();
-	makealert("credits","Credits","<div style='max-height:300px; overflow-y:auto;'><br>Ascii arts:<br><br>Factory, house, thunder, monster, castle, chest,<br>ghost, airplane, microscope, scroll, fox, rat:<br><a href='http://www.retrojunkie.com/asciiart/asciiart.htm' target='_blank'>http://www.retrojunkie.com/asciiart/asciiart.htm</a> (with a little modification)<br><hr>Cloud:<Br><a href='http://www.geocities.com/spunk1111/nature.htm#clouds' target='_blank'>http://www.geocities.com/spunk1111/nature.htm#clouds</a><br>(taken from a \"landscape\")<br><hr>Computer:<br>aniwey (from Candy Box 2)<br><hr>Some other ascii arts are created by me :D<br><br><br>Inspired by:<br>The \"legendary\" <a href='http://candies.aniwey.net' target='_blank' onclick='candybox=true'>Candy Box</a> game<br>and <a href='http://adarkroom.doublespeakgames.net' target='_blank'>A Dark Room</a><br>and also <a href='http://candybox2.net' target='_blank' onclick='candybox=true'>Candy Box 2</a><br><br>Thanks to<br>Minecraft for the \"names\", enchanting, and some others :D<br><br>Also special thanks to:<br>- Redditors, people from cb2 forum, people from jayisgames.com for the bug<br>&nbsp;&nbsp;&nbsp;reports, suggestions and critics<br>- Also thanks to <a href='https://github.com/Stevie-O'>Stevie-O</a> for some fixes</div>",true)
+	makealert("credits","Règles du jeu","<div style='max-height:300px; overflow-y:auto;'><br>Blabla blabla</div>",true)
 }
 function showetc() {
 	closemessage();
