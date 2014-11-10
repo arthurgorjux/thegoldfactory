@@ -93,7 +93,7 @@ function updateitems() {
 	$(".10-gold-cost").html(goldprice*10);
 	$(".100-gold-cost").html(goldprice*100);
 	
-	if(enchant_attack==0 && enchant_defense==0 && enchant_countdown==0 && enchant_life==0) {
+	/*if(enchant_attack==0 && enchant_defense==0 && enchant_countdown==0 && enchant_life==0) {
 		$(".enchants").html("Your sword is enchanted with:<br>Your sword is not enchanted at all.");
 	}
 	else {
@@ -124,7 +124,7 @@ function updateitems() {
 	if(enchant_life==10) { 
 		$(".button-enchant-life").attr("disabled","disabled"); 
 		$(".enchant-sword-life").html("Life 10 is the highest level of life enchantment");
-	}
+	}*/
 	
 	if(airplanecountdown==0) {
 		if(typeof flyingabcd !== 'undefined') {
@@ -146,67 +146,67 @@ function updateitems() {
 	}
 	
 	if(helmet==0) {
-		$(".button-buy-helmet").val("Buy a leather helmet");
+		$(".button-buy-helmet").val("Acheter un casque en cuir");
 	}
 	else if(helmet==1) {
-		$(".button-buy-helmet").val("Buy a chain helmet");
+		$(".button-buy-helmet").val("Acheter un casque en mailles");
 	}
 	else if(helmet==2) {
-		$(".button-buy-helmet").val("Buy an iron helmet");
+		$(".button-buy-helmet").val("Acheter un casque en fer");
 	}
 	else if(helmet==3) {
-		$(".button-buy-helmet").val("Buy a diamond helmet");
+		$(".button-buy-helmet").val("Acheter un casque en diamant");
 	}
 	else {
-		$(".helmet-area").html("Sorry, I have no better helmet for you");
+		$(".helmet-area").html("Pas de meilleur casque pour le moment");
 	}
 	
 	if(chestplate==0) {
-		$(".button-buy-chestplate").val("Buy a leather chestplate");
+		$(".button-buy-chestplate").val("Acheter une armure en cuir");
 	}
 	else if(chestplate==2) {
-		$(".button-buy-chestplate").val("Buy a chain chestplate");
+		$(".button-buy-chestplate").val("Acheter une armure en mailles");
 	}
 	else if(chestplate==4) {
-		$(".button-buy-chestplate").val("Buy an iron chestplate");
+		$(".button-buy-chestplate").val("Acheter une armure en fer");
 	}
 	else if(chestplate==6) {
-		$(".button-buy-chestplate").val("Buy a diamond chestplate");
+		$(".button-buy-chestplate").val("Acheter une armure en diamant");
 	}
 	else {
-		$(".chestplate-area").html("Sorry, I have no better chestplate for you");
+		$(".chestplate-area").html("Pas de meilleur armure pour le moment");
 	}
 	
 	if(pants==0) {
-		$(".button-buy-pants").val("Buy leather pants");
+		$(".button-buy-pants").val("Acheter un pantalon en cuir");
 	}
 	else if(pants==1.5) {
-		$(".button-buy-pants").val("Buy chain pants");
+		$(".button-buy-pants").val("Acheter un pantalon en mailles");
 	}
 	else if(pants==3) {
-		$(".button-buy-pants").val("Buy iron pants");
+		$(".button-buy-pants").val("Acheter un pantalon en fer");
 	}
 	else if(pants==4.5) {
-		$(".button-buy-pants").val("Buy diamond pants");
+		$(".button-buy-pants").val("Acheter un pantalon en diamant");
 	}
 	else {
-		$(".pants-area").html("Sorry, I have no better pants for you");
+		$(".pants-area").html("Pas de meilleur pantalon pour le moment");
 	}
 	
 	if(boots==0) {
-		$(".button-buy-boots").val("Buy leather boots");
+		$(".button-buy-boots").val("Acheter des bottes en cuir");
 	}
 	else if(boots==0.5) {
-		$(".button-buy-boots").val("Buy chain boots");
+		$(".button-buy-boots").val("Acheter des bottes en mailles");
 	}
 	else if(boots==1) {
-		$(".button-buy-boots").val("Buy iron boots");
+		$(".button-buy-boots").val("Acheter des bottes en fer");
 	}
 	else if(boots==1.5	) {
-		$(".button-buy-boots").val("Buy diamond boots");
+		$(".button-buy-boots").val("Acheter des bottes en diamant");
 	}
 	else {
-		$(".boots-area").html("Sorry, I have no better boots for you");
+		$(".boots-area").html("Pas de meilleurs bottes pour le moment");
 	}
 	
 	$(".buy-helmet-price").html((helmet*helmet)*1000+1000);
@@ -279,7 +279,7 @@ function checkbuilding() {
 | |      |\n\
 | |      |\n\
 |_|______|');
-		$(".gate").attr("title","Unlocked Gate");
+		$(".gate").attr("title","Porte dévérouillée");
 		$(".gate").css("cursor","default");
 		$(".enchant").removeClass("hidden");
 		$(".hill").removeClass("hidden");
@@ -326,6 +326,8 @@ function checkitem() {
 			$(".buy-"+itemnamenospace).attr("disabled","disabled");
 		}
 	}
+
+/* ============ Pour acheter des trucs tavu ======================*/
 	if(goldbar < 400) { $(".buy-pizza-20").attr("disabled","disabled"); } else { $(".buy-pizza-20").removeAttr("disabled"); }
 	if(goldbar < 100) { $(".buy-iron-bar").attr("disabled","disabled"); } else { $(".buy-iron-bar").removeAttr("disabled"); }
 	if(goldbar < 20) { $(".training-button").attr("disabled","disabled"); }else { $(".training-button").removeAttr("disabled"); }
@@ -411,7 +413,7 @@ function buyminingmachinegold(amount) {
 		checkthings();
 	}
 }
-function enchantsword(type) {
+/*function enchantsword(type) {
 	if(type=="attack") {
 		price=enchant_attack*enchant_attack*2000+2000;
 		if(goldbar>=price) {
@@ -450,8 +452,11 @@ function enchantsword(type) {
 			}
 		}
 	}
-}
+}*/
 $(document).ready(function() {
+
+	//Saisie du nom du perso
+	var namePerson = prompt("Saisir votre nom", "");
 
 	$('.leversion').html("1.2");
 	//closemessage();
@@ -464,7 +469,7 @@ $(document).ready(function() {
 	ibpt=0;
 	ibtime=3600;
 	ironmining=0;
-	
+	/*======== PRIX DES AFFAIRES ========*/
 	items=[];
 	items.push({"name":"torch","price":10,"owned":0,"plural":"es","showstorage":true}); //0
 	items.push({"name":"shovel","price":50,"owned":0,"plural":"s","showstorage":true}); //1
@@ -508,9 +513,12 @@ $(document).ready(function() {
 	chestplate=0;
 	pants=0;
 	boots=0;
-	
-	theusername="You";
-	theuserdesc="This is you.";
+	if(namePerson != null)
+		theusername=namePerson;
+	else
+	theusername="Moi";	
+	theuserdesc="Je suis moi !!";
+	console.log(theusername);
 	
 	cipherstep=0;
 	cheststep=0;
@@ -1823,7 +1831,7 @@ function save() {
 	makealert("save","Save game","Here you can save your progress (Since i'm not sure if the saving works well or not, so I recommend you to save the game as text too, in case there are some errors)<br><br><input type='button' value='Save game' onclick='dosave(\"localstorage\")'> (Uses HTML5 Local Storage <small>[<a href='javascript:localstoragehelp();' title='What is HTML5 Local Storage???'>?</a>]</small>)<br><input type='button' value='Save game as text' onclick='dosave(\"text\")'><br><input type='button' value='Load game' onclick='dosave(\"load\")'><br><input type='button' value='Reset game' onclick='dosave(\"reset\")'><br><input type='button' value='Toggle autosave' onclick='dosave(\"autotoggle\")'> Game autosaves in <span id='autosavetime'>"+autosavetime+"</span> second(s)",true);
 }
 
-function dosave(param) {
+/*function dosave(param) {
 	if(param=='autotoggle') {
 		if(autosave) {
 			autosave=false;
@@ -2060,7 +2068,7 @@ function dosave(param) {
 			}
 		}
 	}
-}
+}*/
 
 jQuery.fn.shake = function() {
     this.each(function(i) {

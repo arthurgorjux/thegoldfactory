@@ -1,23 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 
-<!--
-	WARNING:
-	 Reading source code may spoil things in this game
-	 Read with caution!
--->
-
 <head>
 	<meta charset="UTF-8">
-	<title>The Gold Factory</title>
+	<title>Arthur Gorjux the game</title>
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="base.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-	<link rel="shortcut icon" href="http://s9.postimg.org/8lwm9t39n/favicon2.png" />
-	
-	<!-- Thanks to /u/Shawnyall and /u/Guildenstern_artist for the favicon! -->
-	
+	<link rel="stylesheet" type="text/css" href="style.css" media="all" />	
 </head>
 <body>
 <div id="storage">
@@ -45,14 +35,14 @@
 
 <div class="alert alert-gold-factory">
 <b>The Gold Factory</b><br>
-Status: You work here, and you get 1 gold bar per second as the salary
+Status: Tu travailles ici et tu gagnes un lingot d'or chaque seconde
 <br><br>
 <input type="button" value="Close this window" onclick="closemessage()">
 </div>
 
 <div class="alert alert-theshop">
-<b>The Shop</b><br>
-What do you want to buy sir?<br><br>
+<b>Le magasin</b><br>
+Que puis-je pour vous ?<br><br>
 <input type="button" value="A shovel" onclick="buy('shovel',1)" class="buy-shovel" disabled> (50 gold bars)<br>
 <input type="button" value="Pizza" onclick="buy('pizza',1)" class="buy-pizza" disabled> (20 gold bars)<br>
 <input type="button" value="20 Pizzas" onclick="buy('pizza',20)" class="buy-pizza-20" disabled> (400 gold bars)<br>
