@@ -2243,17 +2243,17 @@ else if(name=="Zombie King") {
 
 
 output2=output2+"</td></tr><tr><td>";
-output2=output2+"<span class=\"you-"+id+"\">"+theusername+"</span> (<span class=\"player-"+id+"-hp\">"+myhp+"</span>/"+mymaxhp+")<br>Damage: "+power+"<br>Weapon: "+myweapon+"<br>\"<span class=\"you-desc-"+id+"\">"+theuserdesc+"</span>\"";
+output2=output2+"<span class=\"you-"+id+"\">"+theusername+"</span> (<span class=\"player-"+id+"-hp\">"+myhp+"</span>/"+mymaxhp+")<br>Dégats : "+power+"<br>Arme : "+myweapon+"<br>\"<span class=\"you-desc-"+id+"\">"+theuserdesc+"</span>\"";
 output2=output2+"</td><td><div style=\"text-align:center;\">VS</div></td><td>";
-output2=output2+name+" (<span class=\"enemy-"+id+"-hp\">"+hp+"</span>/"+maxhp+")<br>Damage: "+damage+"<br>Weapon: "+weapon+"<br>\""+description+"\"";
+output2=output2+name+" (<span class=\"enemy-"+id+"-hp\">"+hp+"</span>/"+maxhp+")<br>Dégats : "+damage+"<br>Arme : "+weapon+"<br>\""+description+"\"";
 output2=output2+"</td></tr>";
 
-output="<table id=\"battle-"+id+"\">"+output2+"</table><br><div class=\"buttons-"+id+"\"><input type=\"button\" value=\"Attack!\" class=\"button-attack-"+id+"\" onclick=\"attackenemy("+id+","+power+","+hp+",'"+param+"')\"><input type=\"button\" value=\"["+items[7].owned+"] Drink health potion\" style=\"display:none;\" class=\"button-health-"+id+"\" onclick=\"drinkhealthpotion("+id+")\"><input type=\"button\" value=\"Use skill\" style=\"display:none;\" class=\"button-skill-"+id+"\" onclick=\"usetheskill("+id+")\"><br>\n\
-<input type=\"button\" value=\"["+items[11].owned+"] empty\" class=\"button-potion-11-"+id+"\" onclick=\"usepotion(11,"+id+")\">\n\
+output="<table id=\"battle-"+id+"\">"+output2+"</table><br><div class=\"buttons-"+id+"\"><input type=\"button\" value=\"Attaque !\" class=\"button-attack-"+id+"\" onclick=\"attackenemy("+id+","+power+","+hp+",'"+param+"')\"><input type=\"button\" value=\"["+items[7].owned+"] Boire une potion de soin\" style=\"display:none;\" class=\"button-health-"+id+"\" onclick=\"drinkhealthpotion("+id+")\"><input type=\"button\" value=\"Utiliser pouvoir\" style=\"display:none;\" class=\"button-skill-"+id+"\" onclick=\"usetheskill("+id+")\"><br>\n\
+<input type=\"button\" value=\"["+items[11].owned+"] vide\" class=\"button-potion-11-"+id+"\" onclick=\"usepotion(11,"+id+")\">\n\
 <input type=\"button\" value=\"["+items[12].owned+"] poison\" class=\"button-potion-12-"+id+"\" onclick=\"usepotion(12,"+id+")\">\n\
 <input type=\"button\" value=\"["+items[13].owned+"] confusion\" class=\"button-potion-13-"+id+"\" onclick=\"usepotion(13,"+id+")\">\n\
-<input type=\"button\" value=\"["+items[14].owned+"] invisibility\" class=\"button-potion-14-"+id+"\" onclick=\"usepotion(14,"+id+")\">\n\
-<input type=\"button\" value=\"["+items[15].owned+"] instant countdown\" class=\"button-potion-15-"+id+"\" onclick=\"usepotion(15,"+id+")\">\n\
+<input type=\"button\" value=\"["+items[14].owned+"] invisibilité\" class=\"button-potion-14-"+id+"\" onclick=\"usepotion(14,"+id+")\">\n\
+<input type=\"button\" value=\"["+items[15].owned+"] JE SAIS PAS\" class=\"button-potion-15-"+id+"\" onclick=\"usepotion(15,"+id+")\">\n\
 <input type=\"button\" value=\"["+items[16].owned+"] suicide\" class=\"button-potion-16-"+id+"\" onclick=\"usepotion(16,"+id+")\">\n\
 <input type=\"button\" value=\"["+items[17].owned+"] cookie\" class=\"button-potion-17-"+id+"\" onclick=\"usepotion(17,"+id+")\">\n\
 <input type=\"button\" value=\"["+items[18].owned+"] X\" class=\"button-potion-18-"+id+"\" onclick=\"usepotion(18,"+id+")\"> <span class=\"potion-countdown-"+id+"\"></span></div>";
@@ -2676,13 +2676,13 @@ function winbattle(param,id) {
 	if(param=="vs-thief") {
 		passthief=true;
 		closemessage();
-		makealert("new-shop","Thanks!","Hi, i'm Andrew, thanks for helping us kill the thief!<br>Btw I just built a new shop, maybe you want to buy something",true);
+		makealert("new-shop","Merci !","Salut, je suis Andrew, Merci d'avoir vaincu le voleur!<br>J'ai construis un nouveau magasin, tu peux passer",true);
 		checkthings();
 	}
 	else if(param=="vs-worms"){
 		passworms=true;
 		closemessage();
-		makealert("underground-world","Underground World!","Wow! You discovered an underground world! :o",true);
+		makealert("underground-world","Monde souterrain !","Wow ! Tu as découverts le monde souterrain",true);
 		checkthings();
 	}
 	else if(param=="training"){
@@ -2754,7 +2754,7 @@ chest='\n\
 		}
 		else {
 			defeatinvisiblebot=true;
-			makealert("defeat-invisible","Thanks!","Thanks for helping me! I have some items for you<br>And I also give you an emerald sword, hope this can be useful",true);
+			makealert("defeat-invisible","Merci !","Merci de m'avoir aidé ! J'ai quelques objets pour toi et tiens en cadeau une épée en émeraude",true);
 			items[21].owned=1;
 			items[22].owned=1;
 			currentsword="Emerald Sword";
@@ -2790,7 +2790,7 @@ scroll='\n\
 		closemessage();
 		reward=enemyhealthpoint2(false,0);
 		goldbar+=reward;
-		makealert("win-vs-rat","The rat died","You killed the rat, and your boss gave you "+reward+" gold bars!<br><br><input type='button' value=\"Kill more rats!\" onclick='battlevsrats()'>",true);
+		makealert("win-vs-rat","Le rat est mort","Tu as tué le rat, ton patron te donnes "+reward+" lingots d'or !<br><br><input type='button' value=\"Tuer plus de rats !\" onclick='battlevsrats()'>",true);
 	}
 	
 	if(param!="vs-rat"){
@@ -2807,24 +2807,24 @@ function dig(countdown,cheat) {
 		if(digstep==1 && shovelbroken==0 && !cheat) {
 			shovelbroken++;
 			items[1].owned--;
-			makealert("shovel-broken","Shovel is broken :(","Oh snap, the shovel is broken",true);
+			makealert("shovel-broken","Pelle cassée","On non, la pelle est cassée",true);
 			return;
 		}
 		if(digstep==4 && shovelbroken==1 && !cheat) {
 			shovelbroken++;
 			items[1].owned--;
-			makealert("shovel-broken","Shovel is broken :(","Oh snap, the shovel is broken (again!)",true);
+			makealert("shovel-broken","Pelle cassée","Oh non, la pelle est cassée (de nouveau)",true);
 			return;
 		}
 		if(countdown) {
 			if(digcountdown==999999999) {
-				digcountdown=30;
+				digcountdown=5;
 				closemessage();
 				dig(true,false);
 				digabcd=setInterval(function(){digcountdown--;},60000);
 			}
 			else {
-				makealert("dig-countdown","Digging","You are currently digging<br>Time left: <span class='digcd'>"+digcountdown+"</span> 	minute(s) remaining",true);
+				makealert("dig-countdown","Creuser","Tu es en train de creuser<br>Temps restant: <span class='digcd'>"+digcountdown+"</span> 	minute(s)",true);
 			}
 			return;
 		}
@@ -2865,7 +2865,7 @@ function dig(countdown,cheat) {
 	}
 	else {
 		closemessage();
-		makealert("no-shovel","No shovel?","It seems that you have no shovel, please buy a shovel to dig",true);
+		makealert("no-shovel","Pas de pelle ?","Il semblerait que tu n'es pas de pelle. Si tu veux creuser vas en acheter une !",true);
 	}
 }
 
@@ -2874,9 +2874,9 @@ function dig(countdown,cheat) {
 function updateitemlist() {
 	$("#itemlist").html('');
 	current=$("#itemlist").html();
-	$("#itemlist").html(current+'<option value="goldbar">Gold bar ['+goldbar+']</option>');
+	$("#itemlist").html(current+'<option value="goldbar">lingots d\'or ['+goldbar+']</option>');
 	current=$("#itemlist").html();
-	$("#itemlist").html(current+'<option value="ironbar">Iron bar ['+ironbar+']</option>');
+	$("#itemlist").html(current+'<option value="ironbar">Lingots d\'argent ['+ironbar+']</option>');
 	for(i=0;i<items.length;i++) {
 		current=$("#itemlist").html();
 		item=items[i];
@@ -2906,10 +2906,10 @@ function thecauldron(act,id,quantity) {
 			thehtml=$("#goingtobemixed").html();
 			now=cauldron[i];
 			if(now.id=="goldbar") {
-				$("#goingtobemixed").html(thehtml+"<br>"+now.quantity+" gold bar(s)");
+				$("#goingtobemixed").html(thehtml+"<br>"+now.quantity+" lingot(s) d'or");
 			}
 			else if(now.id=="ironbar") {
-				$("#goingtobemixed").html(thehtml+"<br>"+now.quantity+" iron bar(s)");
+				$("#goingtobemixed").html(thehtml+"<br>"+now.quantity+" lingot(s) d'argent");
 			}
 			else {
 				$("#goingtobemixed").html(thehtml+"<br>"+now.quantity+" "+items[now.id].name+"(s)");
@@ -3051,16 +3051,16 @@ function mixitems() {
 
 function makebosshappy() {
 	closemessage();
-	makealert("how-to-make-boss-happy","Make your boss happier","To make him happier and get some bonus gold bars, you can do these things:<br><br><input type='button' value='Kill some rats that sometimes enter the factory at night' onclick='killrats()'><br><input type='button' value='Help him ciphering codes' onclick='ciphercode()'>",true);
+	makealert("how-to-make-boss-happy","Rendre le patron heureux","Pour le rendre heureux et gagner quelques lingots bonus, tu peux faire :<br><br><input type='button' value='Tuer quelques rats' onclick='killrats()'><br><input type='button' value='Répondre à des énigmes' onclick='ciphercode()'>",true);
 }
 function killrats() {
 	if(items[2].owned==0) {
 		closemessage();
-		makealert("no-weapon","No weapon","Oh snap, it seems that you don't have any weapon therefore you can't kill rats",true);
+		makealert("no-weapon","Pas d'arme","Reviens quand tu auras acheter une arme",true);
 	}
 	else {
 		closemessage();
-		makealert("kill-rats","Kill some rats","For you, searching the rats is not a big deal, the problem is the stronger you are, the rats are stronger too! :o<br><br><input type='button' value=\"I'm ready!\" onclick='battlevsrats()'>",true);
+		makealert("kill-rats","Tuer quelques rats","Débarrasse moi de ces rats<br><br><input type='button' value=\"Je suis prêt !\" onclick='battlevsrats()'>",true);
 	}
 }
 function ciphercode() {
@@ -3068,10 +3068,10 @@ function ciphercode() {
 	closemessage();
 	
 	if(cipherstep==0) {
-		codetocipher="13-1-19-20-5-18 2-18-1-14-3-8";
+		codetocipher="Donner le nom et le prénom du créateur.";
 	}
 	else if(cipherstep==1) {
-		codetocipher="Lzwjw ak s ljwskmjw zavvwf kgewozwjw, al ak dguslwv sl s kwujwl hdsuw af lzw Hsuaxau Guwsf";
+		codetocipher="Donner le nom de la formation du créateur.";
 	}
 	else if(cipherstep==2) {
 		codetocipher="Om s ept;f gi;; pg n;pvld";
@@ -3084,18 +3084,18 @@ function ciphercode() {
 	}
 
 	if(cipherstep<5) {
-		makealert("help-ciphering","Cipher some codes","Your boss loves ciphering codes, but he is busy. If you can help him, he promise to give you bonus gold bars as a reward.<br><br>Code #"+(cipherstep+1)+":<br>"+codetocipher+"<br><input type='text' id='cipherthecodeanswer'><br><br><input type='button' value='Submit' onclick='checkchipher()'>",true);
+		makealert("help-ciphering","Enigmes","Ton patron adore les énigmes, mais il est débordé. Si tu peux l'aider, il te donnera une récompense !<br><br>Enigme #"+(cipherstep+1)+":<br>"+codetocipher+"<br><input type='text' id='cipherthecodeanswer'><br><br><input type='button' value='Valider' onclick='checkchipher()'>",true);
 	}
 	else {
-		makealert("no-more-codes","No more codes","Sorry, there are no more codes to cipher",true);
+		makealert("no-more-codes","Plus d'énigmes","Désolé, il n'y a plus d'énigme",true);
 	}
 }
 function battlevsrats() {
 	if(items[2].owned!=0) {
 		powerhp();
 		hpdivide=Math.ceil(hp/4.5);
-		battle=makebattle(Math.round(Math.random()*100),"A Rat",hp-hpdivide,hp-hpdivide,"Their body",power-Math.ceil(power/2.5),"An annoying rat",11,power,hp,hp,currentsword,false,"vs-rat");
-		html="<div class=\"alert alert-battle-rats\"><b>Rat!</b><br>Kill it!!<br><br>"+battle.html+"</div>";
+		battle=makebattle(Math.round(Math.random()*100),"Un Rat",hp-hpdivide,hp-hpdivide,"Son corps",power-Math.ceil(power/2.5),"Un rat solitaire",11,power,hp,hp,currentsword,false,"vs-rat");
+		html="<div class=\"alert alert-battle-rats\"><b>Rat!</b><br>Tues le !!<br><br>"+battle.html+"</div>";
 		$("#otheralerts").append(html);
 		battle.init();
 		closemessage();
@@ -3112,25 +3112,25 @@ function checkchipher() {
 	*/
 
 	if(cipherstep==0) {
-		if($("#cipherthecodeanswer").val().toLowerCase()=="master branch") {
+		if($("#cipherthecodeanswer").val().toLowerCase()=="arthur gorjux") {
 			cipherstep++;
 			goldbar+=200;
 			closemessage();
-			alert("Correct! But since this is an easy one, you 'only' get 200 gold bars"); 
+			alert("Juste ! Mais c'était le début, tu reçois 200 lingots d'or"); 
 		}
 		else {
-			alert('Wrong!');
+			alert('Faux !');
 		}
 	}
 	else if(cipherstep==1) {
-		if($("#cipherthecodeanswer").val().toLowerCase()=="there is a treasure hidden somewhere, it is located at a secret place in the pacific ocean") {
+		if($("#cipherthecodeanswer").val().toLowerCase()=="m1ice") {
 			cipherstep++;
 			goldbar+=1000;
 			closemessage();
-			alert("Correct! You get 1000 gold bars!"); 
+			alert("Juste ! Tu reçois 1000 lingots d'or !");
 		}
 		else {
-			alert('Wrong!');
+			alert('Faux !');
 		}
 	}
 	else if(cipherstep==2) {
