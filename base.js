@@ -368,7 +368,7 @@ function buy(item,number) {
 						$(".diamond-sword-shop").show();
 					}
 					else {
-						alert('I need a sword stone too! Maybe this iron sword is too expensive for you, but it\'s useful!');
+						alert('J\'ai besoin d\'une épée en pierre ! L\'épée en fer est peut être trop chère pour toi, mais elle est efficace !');
 						valid=false;
 					}
 				}
@@ -471,14 +471,14 @@ $(document).ready(function() {
 	ironmining=0;
 	/*======== PRIX DES AFFAIRES ========*/
 	items=[];
-	items.push({"name":"torch","price":10,"owned":0,"plural":"es","showstorage":true}); //0
-	items.push({"name":"shovel","price":50,"owned":0,"plural":"s","showstorage":true}); //1
-	items.push({"name":"wooden sword","price":150,"owned":0,"plural":"s","showstorage":false}); //2
-	items.push({"name":"pizza","price":20,"owned":0,"plural":"s","showstorage":false}); //3
-	items.push({"name":"stone sword","price":500,"owned":0,"plural":"s","showstorage":false}); //4
-	items.push({"name":"iron sword","price":1500,"owned":0,"plural":"s","showstorage":false}); //5
-	items.push({"name":"diamond sword","price":4000,"owned":0,"plural":"s","showstorage":false}); //6
-	items.push({"name":"health potion","price":50,"owned":0,"plural":"s","showstorage":true}); //7
+	items.push({"name":"torch","price":1,"owned":0,"plural":"es","showstorage":true}); //0
+	items.push({"name":"shovel","price":5,"owned":0,"plural":"s","showstorage":true}); //1
+	items.push({"name":"wooden sword","price":15,"owned":0,"plural":"s","showstorage":false}); //2
+	items.push({"name":"pizza","price":2,"owned":0,"plural":"s","showstorage":false}); //3
+	items.push({"name":"stone sword","price":50,"owned":0,"plural":"s","showstorage":false}); //4
+	items.push({"name":"iron sword","price":150,"owned":0,"plural":"s","showstorage":false}); //5
+	items.push({"name":"diamond sword","price":400,"owned":0,"plural":"s","showstorage":false}); //6
+	items.push({"name":"health potion","price":5,"owned":0,"plural":"s","showstorage":true}); //7
 	items.push({"name":"ancient scroll","price":0,"owned":0,"plural":"s","showstorage":true}); //8
 	items.push({"name":"nether stone","price":0,"owned":0,"plural":"s","showstorage":true}); //9
 	items.push({"name":"lava bucket","price":0,"owned":0,"plural":"s","showstorage":true}); //10
@@ -498,11 +498,11 @@ $(document).ready(function() {
 	items.push({"name":"glasses","price":0,"owned":0,"plural":"s","showstorage":false}); //24
 	
 	swords=[];
-	swords.push({"name":"wooden sword","power":6});
-	swords.push({"name":"stone sword","power":11});
-	swords.push({"name":"iron sword","power":15});
-	swords.push({"name":"diamond sword","power":22});
-	swords.push({"name":"emerald sword","power":30});
+	swords.push({"name":"épée en bois","power":6});
+	swords.push({"name":"épée en pierre","power":11});
+	swords.push({"name":"épée en fer","power":15});
+	swords.push({"name":"épée en diamant","power":22});
+	swords.push({"name":"épée en émeraude","power":30});
 	
 	enchant_attack=0; //0
 	enchant_defense=0; //deprecated :o
@@ -516,7 +516,7 @@ $(document).ready(function() {
 	if(namePerson != null)
 		theusername=namePerson;
 	else
-	theusername="Moi";	
+		theusername="Moi";	
 	theuserdesc="Je suis moi !!";
 	
 	cipherstep=0;
@@ -3066,7 +3066,7 @@ function killrats() {
 function ciphercode() {
 
 	closemessage();
-	
+	// TODO : finir les énigmes
 	if(cipherstep==0) {
 		codetocipher="Donner le nom et le prénom du créateur.";
 	}
