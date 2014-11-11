@@ -328,8 +328,8 @@ function checkitem() {
 	}
 
 /* ============ Pour acheter des trucs tavu ======================*/
-	if(goldbar < 400) { $(".buy-pizza-20").attr("disabled","disabled"); } else { $(".buy-pizza-20").removeAttr("disabled"); }
-	if(goldbar < 100) { $(".buy-iron-bar").attr("disabled","disabled"); } else { $(".buy-iron-bar").removeAttr("disabled"); }
+	if(goldbar < 40) { $(".buy-pizza-20").attr("disabled","disabled"); } else { $(".buy-pizza-20").removeAttr("disabled"); }
+	if(goldbar < 10) { $(".buy-iron-bar").attr("disabled","disabled"); } else { $(".buy-iron-bar").removeAttr("disabled"); }
 	if(goldbar < 20) { $(".training-button").attr("disabled","disabled"); }else { $(".training-button").removeAttr("disabled"); }
 	if(ironbar < ironprice) { $(".buy-1-mining").attr("disabled","disabled"); } else { $(".buy-1-mining").removeAttr("disabled"); }
 	if(ironbar < (ironprice*10)) { $(".buy-10-mining").attr("disabled","disabled"); } else { $(".buy-10-mining").removeAttr("disabled"); }
@@ -996,12 +996,13 @@ function clickcloud() {
 function powerhp() {
 	for(i=0;i<swords.length;i++) {
 		thissword=swords[i];
+		power = thissword.power;
 		if(currentsword.toLowerCase()==thissword.name) {
 			power=thissword.power+additionalattack;
 			break;
 		}
 	}
-	power+=enchant_attack*7;
+	//power+=enchant_attack*7;
 	hp=100;
 	hp+=Math.floor(items[3].owned/3.5);
 	thisismyhp=100;
@@ -1047,12 +1048,12 @@ function showbugs() {
 }
 function dighole() {
 	if(items[2].owned==0) {
-		makealert("attacked","Attacked!","While you are digging the hole, suddenly someone runs towards you and tried to attack you<br>You have no weapon, so you run away",true);
+		makealert("attacked","Tu es attaqué !","Pendant que tu creusais, quelqu'un te court après et t'attaque !<br>Tu n'as pas d'arme et tu fuis !",true);
 	}
 	else {
 		powerhp();
-		battle=makebattle(Math.round(Math.random()*100),"Thief",100,100,"Handmade Sword",3,"A thief, nothing else",0,power,hp,hp,currentsword,false,"vs-thief");
-		html="<div class=\"alert alert-battle1\"><b>Attacked!</b><br>While you are digging the hole, suddenly someone runs towards you and tried to attack you<br><br>"+battle.html+"</div>";
+		battle=makebattle(Math.round(Math.random()*100),"Voleur",100,100,"Epée en papier",3,"Un voleur",0,power,hp,hp,currentsword,false,"vs-voleur");
+		html="<div class=\"alert alert-battle1\"><b>Tu es attaqué !</b><br>Pendant que tu creusais, quelqu'un te court après et t'attaque !<br><br>"+battle.html+"</div>";
 		$("#otheralerts").append(html);
 		battle.init();
 		closemessage();
@@ -1061,8 +1062,8 @@ function dighole() {
 }
 function continuedigging() {
 	powerhp();
-	battle=makebattle(Math.round(Math.random()*100),"Worms",80,80,"Their body",15,"Worms!",1,power,hp,hp,currentsword,false,"vs-worms");
-	html="<div class=\"alert alert-battle2\"><b>Worms! :o</b><br>There are worms under the ground!<br>They seemed to be mad because you destroyed their home<br><br>"+battle.html+"</div>";
+	battle=makebattle(Math.round(Math.random()*100),"Vers",80,80,"Leurs corps",15,"Vers!",1,power,hp,hp,currentsword,false,"vs-vers");
+	html="<div class=\"alert alert-battle2\"><b>Vers !</b><br>Il y a des vers sous le sol !<br><br>"+battle.html+"</div>";
 	$("#otheralerts").append(html);
 	battle.init();
 	closemessage();
@@ -2178,14 +2179,14 @@ output2=output2+"<pre style=\"position:absolute;margin-top:-77px;\" class=\"play
      |\n\
     / \\</pre>";
 
+stype = "";
+if(currentsword=="épée en bois") { stype="Wood"; }
+if(currentsword=="épée en pierre") { stype="Stone"; }
+if(currentsword=="épée en fer") { stype="Iron"; }
+if(currentsword=="épée en diamant") { stype="Diamond"; }
+if(currentsword=="épée en émeraude") { stype="Diamond"; }
 	
-if(currentsword=="Wooden Sword") { stype="Wood"; }
-if(currentsword=="Stone Sword") { stype="Stone"; }
-if(currentsword=="Iron Sword") { stype="Iron"; }
-if(currentsword=="Diamond Sword") { stype="Diamond"; }
-if(currentsword=="Emerald Sword") { stype="Diamond"; }
-	
-output2=output2+"<img style=\"position:absolute;\" class=\"player-sword-"+id+"\" src=\"images/sword"+stype+".png\">";
+//output2=output2+"<img style=\"position:absolute;\" class=\"player-sword-"+id+"\" src=\"images/sword"+stype+".png\">";
 
 output2=output2+"<pre style=\"position:absolute;margin-top:-180px;margin-left:50px;opacity:0;\" class=\"thunder-"+id+"\">\n\
                          ___\n\
