@@ -518,7 +518,6 @@ $(document).ready(function() {
 	else
 	theusername="Moi";	
 	theuserdesc="Je suis moi !!";
-	console.log(theusername);
 	
 	cipherstep=0;
 	cheststep=0;
@@ -589,15 +588,15 @@ $(document).ready(function() {
 	$("#gold-factory").click(function() {
 		if(!passgate&&!buyfactory) {
 			closemessage();
-			makealert("gold-factory","The Gold Factory","Status: You work here, and you get 1 gold bar per second as the salary<br><br><input type=\"button\" value=\"Make the boss happier\" onclick=\"makebosshappy()\"> and receive bonus!",true)
+			makealert("gold-factory","The Gold Factory","Statut: Tu travailles à l'usine et tu gagnes 1 lingot d'or par seconde comme salaire !<br><br><input type=\"button\" value=\"Rendre le patron heureux\" onclick=\"makebosshappy()\"> et recevoir des bonus !",true)
 		}
 		else if(passgate&&!buyfactory) {
 			closemessage();
-			makealert("buy-factory","The Gold Factory","Status: You work here, and you get 1 gold bar per second as the salary<br><br><input type=\"button\" value=\"Make the boss happier\" onclick=\"makebosshappy()\">and receive bonus!<br><input type=\"button\" value=\"Buy this factory\" onclick=\"buythefactory()\" class=\"buy-factory-button\"> for 5000 goldbars and get more goldbars each second!",true)
+			makealert("buy-factory","The Gold Factory","Statut: Tu travailles à l'usine et tu gagnes 1 lingot d'or par seconde comme salaire !<br><br><input type=\"button\" value=\"Rendre le patron heureux\" onclick=\"makebosshappy()\"> et recevoir des bonus !<br><input type=\"button\" value=\"Acheter l'usine\" onclick=\"buythefactory()\" class=\"buy-factory-button\"> pour 1000 lingots d'or et produire plus d'or !",true)
 		}
 		else if(passgate&&buyfactory) {
 			closemessage();
-			makealert("buy-factory-new","The Gold Factory","Status: You are the boss! :o<br><br>Currently you have <span class=\"gold-mining\">"+goldmining+"</span> mining machines<br>Production: <span class=\"gbps\">"+gbps+"</span> goldbars / second<br><br><input type=\"button\" value=\"Buy 1 mining machine\" onclick=\"buyminingmachinegold(1)\" class=\"buy-1-mining-gold\"> (<span class=\"1-gold-cost\">"+goldprice+"</span> Iron Bars)<br><input type=\"button\" value=\"Buy 10 mining machines\" onclick=\"buyminingmachinegold(10)\" class=\"buy-10-mining-gold\"> (<span class=\"10-gold-cost\">"+goldprice*10+"</span> Iron Bars)<br><input type=\"button\" value=\"Buy 100 mining machines\" onclick=\"buyminingmachinegold(100)\" class=\"buy-100-mining-gold\"> (<span class=\"100-gold-cost\">"+goldprice*100+"</span> Iron Bars)<br><br>Tips: Buying 100 machines once is cheaper than buying 1 machine 100 times",true)
+			makealert("buy-factory-new","The Gold Factory","Statut: Tu es le patron de l'usine ! :o<br><br>Currently you have <span class=\"gold-mining\">"+goldmining+"</span> mining machines<br>Production: <span class=\"gbps\">"+gbps+"</span> goldbars / second<br><br><input type=\"button\" value=\"Buy 1 mining machine\" onclick=\"buyminingmachinegold(1)\" class=\"buy-1-mining-gold\"> (<span class=\"1-gold-cost\">"+goldprice+"</span> Iron Bars)<br><input type=\"button\" value=\"Buy 10 mining machines\" onclick=\"buyminingmachinegold(10)\" class=\"buy-10-mining-gold\"> (<span class=\"10-gold-cost\">"+goldprice*10+"</span> Iron Bars)<br><input type=\"button\" value=\"Buy 100 mining machines\" onclick=\"buyminingmachinegold(100)\" class=\"buy-100-mining-gold\"> (<span class=\"100-gold-cost\">"+goldprice*100+"</span> Iron Bars)<br><br>Tips: Buying 100 machines once is cheaper than buying 1 machine 100 times",true)
 		}
 	});
 	$(".theshop").click(function() {
@@ -837,8 +836,8 @@ chestascii='\n\
 			}
 		}
 	});
-	*/$(".laptop").click(function() {
-		makealert("cookieclicker","Cookie Clicker (not full version)","Play the full game here: <a href='http://orteil.dashnet.org/cookieclicker/' target='_blank'>http://orteil.dashnet.org/cookieclicker/</a><br><br><span style='font-size:20px;'><span class='current-cookie'>"+items[19].owned+"</span> cookie(s)</span><br><span class='cps'>"+cursor/10+" </span> per second<br><br><input type=\"button\" value=\"Bake a cookie\" onclick=\"cookieclicker('bake')\"><br><br><span style='font-size:20px;'>Shop:</span><br><br><input type=\"button\" value=\"Cursor ["+cursor+"]\" onclick=\"alert('This is not the full version of Cookie Clicker, therefore you cant buy cursors')\" class='cursor-button'> (<span class='cursor-price'>"+Math.round(15*Math.pow(1.15,cursor))+"</span> cookies)<br><!--input type=\"button\" value=\"Grandma [0]\" onclick=\"alert('This is not the full version of Cookie Clicker')\"> (100 cookies)00-->",true);
+	//$(".laptop").click(function() {
+	//	makealert("cookieclicker","Cookie Clicker (not full version)","Play the full game here: <a href='http://orteil.dashnet.org/cookieclicker/' target='_blank'>http://orteil.dashnet.org/cookieclicker/</a><br><br><span style='font-size:20px;'><span class='current-cookie'>"+items[19].owned+"</span> cookie(s)</span><br><span class='cps'>"+cursor/10+" </span> per second<br><br><input type=\"button\" value=\"Bake a cookie\" onclick=\"cookieclicker('bake')\"><br><br><span style='font-size:20px;'>Shop:</span><br><br><input type=\"button\" value=\"Cursor ["+cursor+"]\" onclick=\"alert('This is not the full version of Cookie Clicker, therefore you cant buy cursors')\" class='cursor-button'> (<span class='cursor-price'>"+Math.round(15*Math.pow(1.15,cursor))+"</span> cookies)<br><!--input type=\"button\" value=\"Grandma [0]\" onclick=\"alert('This is not the full version of Cookie Clicker')\"> (100 cookies)00-->",true);
 		
 		/* 
 		
@@ -849,7 +848,7 @@ chestascii='\n\
 			
 		*/
 		
-	});*/
+	//});
 	$(".sign-dig").click(function() {
 		makealert("sign-underground-alert","Plus de trou","\"Il n'y a plus rien à creuser\"",true);
 	});
